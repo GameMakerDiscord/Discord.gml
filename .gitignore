@@ -1,0 +1,17 @@
+.vs/
+*/Configs/*/*
+*/extensions/*/*.cpp
+*/extensions/*/*.dll
+*/Release/
+Release/
+export/*.gmez
+export/*.png
+export/*.gmz
+*.sdf
+help.rtf
+Discord.gml/discord_game_sdk/*
+!Discord.gml/discord_game_sdk/extract discord_game_sdk zip here
+!Discord.gml/discord_game_sdk/README file must be in this same directory
+*/#backups/
+/Discord.gml.VC.VC.opendb
+/Discord.gml.VC.db
