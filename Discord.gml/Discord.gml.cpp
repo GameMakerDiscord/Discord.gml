@@ -20,6 +20,9 @@
 #define dllx extern "C"
 #endif
 
+// ID of the async event to perform. (69 = Steam, 70 = Social, etc.)
+#define async_event_to_perform 69
+
 using namespace discord;
 #define isok(v) ((v) == Result::Ok)
 using id_t = std::int64_t;
@@ -147,7 +150,7 @@ class async_event {
 	}
 	/// Dispatches this event and cleans up the map.
 	void dispatch() {
-		gml_event_perform_async(map, 69);
+		gml_event_perform_async(map, async_event_to_perform);
 	}
 	bool set(char* key, double value) {
 		return gml_ds_map_set_double(map, key, value);
@@ -176,7 +179,7 @@ class async_event {
 	}
 };
 dllx double discord_dispatch_event(double map_id) {
-	gml_event_perform_async((gml_ds_map)map_id, 69);
+	gml_event_perform_async((gml_ds_map)map_id, async_event_to_perform);
 	return true;
 }
 
@@ -1034,6 +1037,10 @@ dllx double discord_network_send_message_raw(NetworkPeerId* peer_id, double chan
 dllx double discord_network_flush() {
 	proc_amiss;
 	return ri(qNetwork->Flush());
+}
+dllx double discord_lobby_network_flush() {
+	proc_amiss;
+	return ri(qLobbies->FlushNetwork());
 }
 
 void discord_network_init() {
