@@ -20,6 +20,9 @@
 #define dllx extern "C"
 #endif
 
+// ID of the async event to perform. (69 = Steam, 70 = Social, etc.)
+#define async_event_to_perform 69
+
 using namespace discord;
 #define isok(v) ((v) == Result::Ok)
 using id_t = std::int64_t;
@@ -1034,6 +1037,10 @@ dllx double discord_network_send_message_raw(NetworkPeerId* peer_id, double chan
 dllx double discord_network_flush() {
 	proc_amiss;
 	return ri(qNetwork->Flush());
+}
+dllx double discord_lobby_network_flush() {
+	proc_amiss;
+	return ri(qLobbies->FlushNetwork());
 }
 
 void discord_network_init() {
