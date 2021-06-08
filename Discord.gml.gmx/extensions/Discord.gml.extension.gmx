@@ -984,6 +984,15 @@
           <args/>
         </function>
         <function>
+          <name>discord_lobby_network_flush</name>
+          <externalName>discord_lobby_network_flush</externalName>
+          <kind>1</kind>
+          <help>discord_lobby_network_flush()</help>
+          <returnType>2</returnType>
+          <argCount>0</argCount>
+          <args/>
+        </function>
+        <function>
           <name>discord_overlay_is_enabled</name>
           <externalName>discord_overlay_is_enabled</externalName>
           <kind>1</kind>
