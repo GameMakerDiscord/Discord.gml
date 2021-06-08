@@ -150,7 +150,7 @@ class async_event {
 	}
 	/// Dispatches this event and cleans up the map.
 	void dispatch() {
-		gml_event_perform_async(map, 69);
+		gml_event_perform_async(map, async_event_to_perform);
 	}
 	bool set(char* key, double value) {
 		return gml_ds_map_set_double(map, key, value);
@@ -179,7 +179,7 @@ class async_event {
 	}
 };
 dllx double discord_dispatch_event(double map_id) {
-	gml_event_perform_async((gml_ds_map)map_id, 69);
+	gml_event_perform_async((gml_ds_map)map_id, async_event_to_perform);
 	return true;
 }
 
