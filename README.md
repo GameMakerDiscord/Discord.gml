@@ -1,5 +1,15 @@
 # Discord.gml
 
+# ATTENTION
+
+Most of the Game SDK has been deprecated and will cease functioning in 2023:
+
+![](Deprecation.png)
+
+**Do not use this extension for networking**
+
+---
+
 This is a wrapper for [Discord](https://discordapp.com)'s Game SDK
 for GameMaker: Studio / GameMaker Studio 2.
 
